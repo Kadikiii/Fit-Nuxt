@@ -5,4 +5,5 @@
       <li><NuxtLink to="/login">About</NuxtLink></li>
       <li><NuxtLink to="/signup">About</NuxtLink></li>
     </div>
+    <footer2/>
   </template>
