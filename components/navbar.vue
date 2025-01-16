@@ -23,6 +23,36 @@
                 Dashboard
               </NuxtLink>
             </li>
+            <li class="shrink-0">
+              <NuxtLink to="Blogs" title=""
+                class="flex text-sm font-medium text-gray-900 hover:text-primary-700 dark:text-white dark:hover:text-primary-500">
+                Posts
+              </NuxtLink>
+            </li>
+            <li class="shrink-0">
+              <NuxtLink to="ProtienIntake" title=""
+                class="flex text-sm font-medium text-gray-900 hover:text-primary-700 dark:text-white dark:hover:text-primary-500">
+                Protien intake
+              </NuxtLink>
+            </li>
+            <li class="shrink-0">
+              <NuxtLink to="Meals" title=""
+                class="flex text-sm font-medium text-gray-900 hover:text-primary-700 dark:text-white dark:hover:text-primary-500">
+                Meals Scheduling
+              </NuxtLink>
+            </li>
+            <li class="shrink-0">
+              <NuxtLink to="Workout" title=""
+                class="flex text-sm font-medium text-gray-900 hover:text-primary-700 dark:text-white dark:hover:text-primary-500">
+                Workout Scheduling
+              </NuxtLink>
+            </li>
+            <li class="shrink-0">
+              <NuxtLink to="Progress" title=""
+                class="flex text-sm font-medium text-gray-900 hover:text-primary-700 dark:text-white dark:hover:text-primary-500">
+                Progress Tracking
+              </NuxtLink>
+            </li>
           </ul>
         </div>
       </div>
