@@ -1,6 +1,6 @@
 <template>
   <div class="antialiased bg-gray-50 dark:bg-gray-900 h-auto">
-    <main class="p-4 h-96 pt-20">
+    <main class="p-4 h-auto pt-20">
       <h2 class="text-2xl font-bold mb-4 text-gray-900 dark:text-white">Dashboard</h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-4">
         <div class="border-2 border-dashed border-gray-300 rounded-lg dark:border-gray-600 flex flex-col items-start justify-center p-4 h-auto">

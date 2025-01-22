@@ -1,5 +1,11 @@
 <template>
-    <navbar/>
-    <Shells/>
-    <footer2/>
+    <div>
+        <navbar/>
+    </div>
+    <div>
+        <Shells/>
+    </div>
+    <div>
+        <footer2/>
+    </div>
 </template>
