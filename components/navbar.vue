@@ -53,9 +53,23 @@
                 Progress Tracking
               </NuxtLink>
             </li>
+            <li>
+              <button @click="logout">Logout</button>
+            </li>
           </ul>
         </div>
       </div>
     </div>
   </nav>
 </template>
+
+<script setup>
+import { useRouter } from 'vue-router';
+
+const router = useRouter();
+
+const logout = () => {
+    localStorage.removeItem('token'); // Remove token
+    router.push('/login'); // Redirect to login page
+};
+</script>
