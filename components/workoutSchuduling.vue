@@ -31,22 +31,30 @@ export default {
         return {
             workoutType: '',
             minutes: '',
-            caloriesBurned: ''
+            caloriesBurned: '',
+            token: localStorage.getItem('token'), // Retrieve token from local storage
         };
     },
     methods: {
         async addWorkout() {
+            if (!this.token) {
+                console.error('No token found. User might not be authenticated.');
+                return;
+            }
+
             const workoutData = {
-                type: this.workoutType,
-                duration: this.minutes,
-                calories: this.caloriesBurned
+                workout_type: this.workoutType,
+                duration_minutes: this.minutes,
+                calories_burned: parseFloat(this.caloriesBurned).toFixed(2),
+                notes: 'Warmup with 20kg on the bench', // Static note (can be dynamic if needed)
             };
 
             try {
-                const response = await fetch('YOUR_API_ENDPOINT', {
+                const response = await fetch('http://localhost:4000/api/workouts/', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
+                        Authorization: `Bearer ${this.token}`, // Include the token in the Authorization header
                     },
                     body: JSON.stringify(workoutData),
                 });

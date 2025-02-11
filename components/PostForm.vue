@@ -30,36 +30,44 @@ export default {
         };
     },
     methods: {
-        async createPost() {
-            const postData = {
-                title: this.postTitle,
-                content: this.postContent
-            };
+    async createPost() {
+        const token = localStorage.getItem('token'); // Retrieve the token from localStorage
 
-            try {
-                const response = await fetch('YOUR_API_ENDPOINT', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify(postData),
-                });
+        if (!token) {
+            console.error('No authentication token found.');
+            return;
+        }
 
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
+        const postData = {
+            title: this.postTitle,
+            content: this.postContent
+        };
 
-                const result = await response.json();
-                console.log('Post created successfully:', result);
-                
-                // Reset the input fields after successful submission
-                this.postTitle = '';
-                this.postContent = '';
+        try {
+            const response = await fetch('http://localhost:4000/api/blog/posts', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${token}` // Add token to headers
+                },
+                body: JSON.stringify(postData),
+            });
 
-            } catch (error) {
-                console.error('Error creating post:', error);
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
             }
+
+            const result = await response.json();
+            console.log('Post created successfully:', result);
+
+            // Reset the input fields after successful submission
+            this.postTitle = '';
+            this.postContent = '';
+
+        } catch (error) {
+            console.error('Error creating post:', error);
         }
     }
+}
 };
 </script>
